@@ -9,7 +9,12 @@ const { connectDB } = require("./config/db");
 require("dotenv").config();
 
 // Database Connection
-connectDB();
+
+
+// connectDB();
+
+app.use("/api", require("./Router/user.route"));
+app.use("/api", require("./Router/post.route"));
 
 // Server Initialization
 app.listen(process.env.PORT || 5000, () => {
