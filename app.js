@@ -2,6 +2,9 @@
 const express = require("express");
 const app = express();
 
+//malwaires
+app.use(express.json())
+
 // Import database configuration
 const { connectDB } = require("./config/db");
 
@@ -10,11 +13,13 @@ require("dotenv").config();
 
 // Database Connection
 
-
-// connectDB();
+connectDB();
 
 app.use("/api", require("./Router/user.route"));
 app.use("/api", require("./Router/post.route"));
+app.use("/api", require("./Router/notification.route"));
+app.use("/api", require("./Router/comment.route"));
+app.use("/api", require("./Router/message.route"));
 
 // Server Initialization
 app.listen(process.env.PORT || 5000, () => {

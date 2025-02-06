@@ -1,5 +1,4 @@
-const express = require("express");
-const route = express.Router();
+
 
 const GetAllPosts = (req, res) => {
   res.send("Get all posts");
