@@ -6,10 +6,11 @@ const {
   CreateNewUser,
   UpdateUser,
   DeleteUser,
+  FollowUser
 } = require("../controllers/user.controller");
 
 router.route("/users").get(GetAllUser).post(CreateNewUser);
-
+router.route("/users/follow").post(FollowUser)
 router
   .get("/users/:id", GetUserById)
   .delete("/users/:id", DeleteUser)
