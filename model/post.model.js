@@ -1,4 +1,5 @@
 const mongosse = require("mongoose");
+const Joi = require("joi");
 const postSchema = new mongosse.Schema({
   text: {
     type: String,
@@ -6,7 +7,6 @@ const postSchema = new mongosse.Schema({
   },
   image: {
     type: String,
-    required: false,
     default: "image.png",
   },
   user: {
@@ -42,5 +42,32 @@ const postSchema = new mongosse.Schema({
     default: Date.now,
   },
 });
+
+//validations
+
+const validateCreatePost = (obj) => {
+  const schema = Joi.object({
+    text: Joi.string().required().trim(),
+    user: Joi.string().required().trim(),
+    image: Joi.string(),
+    likes: Joi.string(),
+    comments: Joi.array().items(
+      Joi.object({
+        text: Joi.string().when('comments', {
+          is: Joi.exist(),
+          then: Joi.string().required().trim(),
+          otherwise: Joi.string().optional()
+        }),
+        user: Joi.string().when('comments', {
+          is: Joi.exist(),
+          then: Joi.string().required(),
+          otherwise: Joi.string().optional()
+        })
+      })
+    )
+  });
+  return schema.validate(obj);
+};
+
 const Post = mongosse.model("postProject", postSchema);
-module.exports = Post;
+module.exports = { Post, validateCreatePost };
