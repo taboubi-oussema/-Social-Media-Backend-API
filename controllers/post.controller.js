@@ -56,25 +56,48 @@ const CreateNewPost = asyncHandler(async (req, res) => {
     if (!userFound) {
       return res.status(404).json({ message: "user not found" });
     }
-    for (const comment of req.body.comments) {
-      const commentUserFound = await User.findById(comment.user);
-      if (!commentUserFound) {
-        return res
-          .status(404)
-          .json({ message: `User ${comment.user} not found` });
-      }
-    }
-    const newPost = new Post({
-      text: req.body.text,
-      user: req.body.user,
-      image: req.body.image,
-      likes: req.body.likes,
-      comments: req.body.comments.map((comment) => ({
-        text: comment.text,
-        user: comment.user,
-      })),
-    });
 
+    if (
+      req.body.comments &&
+      Array.isArray(req.body.comments) &&
+      req.body.comments.length > 0
+    ) {
+      for (const comment of req.body.comments) {
+        const commentUserFound = await User.findById(comment.user);
+        if (!commentUserFound) {
+          return res
+            .status(404)
+            .json({ message: `User ${comment.user} not found` });
+        }
+        if (!comment.text?.trim()) {
+          return res.status(400).json({
+            message: "text is required for comment",
+          });
+        }
+      }
+
+      var newPost = new Post({
+        text: req.body.text,
+        user: req.body.user,
+        image: req.body.image,
+        likes: req.body.likes,
+        comments: req.body.comments.map((comment) => ({
+          text: comment.text,
+          user: comment.user,
+        })),
+      });
+    } else if (req.body.comments?.length === 0) {
+      return res.status(400).json({
+        message: "Comments array cannot be empty UserID is required",
+      });
+    } else {
+      var newPost = new Post({
+        text: req.body.text,
+        user: req.body.user,
+        image: req.body.image,
+        likes: req.body.likes,
+      });
+    }
     await newPost.save();
     res
       .status(201)
