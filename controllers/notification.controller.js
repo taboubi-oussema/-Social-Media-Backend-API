@@ -1,4 +1,4 @@
-const Notification = require("../model/notification.model");
+const {Notification,notificationJoiSchema} = require("../model/notification.model");
 const asynchandler = require("express-async-handler");
 const { User } = require("../model/user.model");
 /**
@@ -47,15 +47,14 @@ const GetNotificationById = asynchandler(async (req, res) => {
  */
 const CreateNewNotification = asynchandler(async (req, res) => {
   try {
-    if (!req.body.user) {
-      return res.status(400).json({ message: "User ID is required" });
-    }
+    const { error } =notificationJoiSchema(req.body);
+      if (error) {
+        return res.status(400).json({ message: error.details[0].message });
+      }
+
     const user = await User.findById(req.body.user);
     if (!user) {
       return res.status(404).json({ message: "User not found" });
-    }
-    if (!req.body.message) {
-      return res.status(400).json({ message: "Message is required" });
     }
 
     const newNotification = new Notification({

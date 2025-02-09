@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Joi = require("joi");
 const notificationSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
@@ -18,5 +19,14 @@ const notificationSchema = new mongoose.Schema({
     default: Date.now,
   },
 });
-const Notification =mongoose.model("notificationProject", notificationSchema);
-module.exports = Notification;
+const notificationJoiSchema = (obj) => {
+  const schema = Joi.object({
+    user: Joi.string().required(),
+    message: Joi.string().required(),
+    read: Joi.boolean().default(false),
+    createdAt: Joi.date().default(Date.now),
+  });
+  return schema.validate(obj);
+};
+const Notification = mongoose.model("notificationProject", notificationSchema);
+module.exports = { Notification, notificationJoiSchema };
