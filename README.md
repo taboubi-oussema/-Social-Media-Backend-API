@@ -6,7 +6,7 @@
 </div>
 
 ## 🏃‍♂️ Quick Start
-- [Description!](https://github.com/Develekko/Social-Backend-Api#-description)
+- [Description!](https://github.com/taboubi-oussema/-Social-Media-Backend-API#-description)
 - [Technologies!](https://github.com/Develekko/Social-Backend-Api#-technologies)
 - [Features!](https://github.com/Develekko/Social-Backend-Api#-features)
 - [Prerequisites!](https://github.com/Develekko/Social-Backend-Api#-prerequisites)
@@ -14,8 +14,7 @@
 - [API Documentation!](https://github.com/Develekko/Social-Backend-Api#-api-documentation)
 - [Deployment!](https://github.com/Develekko/Social-Backend-Api#-deployment)
 - [Contribute!](https://github.com/Develekko/Social-Backend-Api#-contribute)
-- [Author!](https://github.com/Develekko/Social-Backend-Api#-author)
-- [Licence!](https://github.com/Develekko/Social-Backend-Api#-licence)
+
 
 ## 📝 Description
 
