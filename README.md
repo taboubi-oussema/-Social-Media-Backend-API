@@ -87,8 +87,8 @@ To install and run your social media backend API, follow these steps:
 <h2>1. Clone the repository</h2>
 
 ```
-git clone https://github.com/Develekko/Social-Backend-Api.git
-cd Social-Backend-Api
+git clone https://github.com/taboubi-oussema/-Social-Media-Backend-API.git
+cd -Social-Media-Backend-API
 ```
 
 <h2>2. Install dependencies</h2>
@@ -104,34 +104,17 @@ npm install
 ```
 PORT=<Your_PORT_Number>
 DB_URL=<mongodb_url>
-BARER_KEY=<BEARER>
-TOKEN_SIGNATURE=<SIGNATURE>
-CONFIRM_EMAIL_SIGNAUTRE=<SIGNATURE>
-SALT_ROUNDS=<SALT_ROUNDS>
-GMAIL_EMAIL=<GMAIL_EMAIL>
-GMAIL_PASSWORD=<GMAIL_APP_PASSWORD>
-CLOUDINARY_NAME=<CLOUDINARY_NAME>
-CLOUDINARY_KEY=<CLOUDINARY_KEY>
-CLOUDINARY_SECRET=<CLOUDINARY_SECRET>
-INTERNET_INFO=https://ipgeolocation.abstractapi.com/v1/?api_key=<ABSTRACT_API_KEY>
+NODE_ENV=development
 ```
 
 - Replace `<Your_PORT_Number>` with the port number you want your server to listen on , for example (5000)
 - Replace `<mongodb_url>` with your MongoDB Cloud URL
 > Note: To get `MongoDB` the  Cloud URL, follow these steps through [URL](https://www.mongodb.com/docs/guides/atlas/connection-string)
-- Replace `<BEARER>` with any secret key for example (**bearer_{Token}**)
-- Replace `<SIGNATURE>` with any secret key for example (**UhzOXjiSgTWDZbXUSRnh**)
 > Note: In JSON Web Tokens (JWT), the signature is a string of characters that is used to verify the authenticity of the token.
 - Replace `<SALT_ROUNDS>` with number between 1-20
 > Note: A commonly used hashing algorithm for password storage is bcrypt, and a minimum of 10 salt rounds is generally recommended.
 However, some security experts recommend using a higher number of salt rounds
 , such as 12 or 14, to provide additional security against brute-force attacks. [Read More...](https://medium.com/coinmonks/to-salt-or-not-to-salt-salting-is-not-the-only-answer-to-securing-passwords-cdab26bd20ad)
-- Replace `<GMAIL_EMAIL>` with your Google Account
-- Replace `<GMAIL_APP_PASSWORD>` with your Google App password
-> Note: follow these steps : [URL](https://support.google.com/accounts/answer/185833?hl=en)
-- Replace `<CLOUDINARY_NAME>`, `CLOUDINARY_KEY`,`CLOUDINARY_SECRET` with keys in your  [cloudinary](https://cloudinary.com) Account .  Follow these steps on this [URL](https://cloudinary.com/documentation/how_to_integrate_cloudinary#1_create_your_account_and_set_up_your_product_environment)
-> ![image](https://i.imgur.com/9TndYUV.png)
-- Replace `ABSTRACT_API_KEY` with  your own api key through [URL](https://www.abstractapi.com/api/ip-geolocation-api)
 
 <h2>4. Start the server</h2>
 
