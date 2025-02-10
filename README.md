@@ -13,7 +13,6 @@
 - [Installation!](https://github.com/taboubi-oussema/-Social-Media-Backend-API#%EF%B8%8F-installation)
 - [API Documentation!](https://github.com/taboubi-oussema/-Social-Media-Backend-API#-api-documentation)
 - [Deployment!](https://github.com/taboubi-oussema/-Social-Media-Backend-API#-deployment)
-- [Contribute!](https://github.com/Develekko/taboubi-oussema/-Social-Media-Backend-API#-contribute)
 
 
 ## 📝 Description
