@@ -234,13 +234,3 @@ node -v
 
 ## 👍 Contribute
 Leave a ⭐ If you think this project is cool.
-
-## 👨‍💻 Author
-
-Housam Ramadan
-
-
-[![image](https://user-images.githubusercontent.com/52341115/235778729-5364162c-9b6e-4d43-aca7-c83eb087ad83.png)](https://www.linkedin.com/in/housamramadan)
-
-## 🔓 Licence
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). See the LICENSE file for more information.
