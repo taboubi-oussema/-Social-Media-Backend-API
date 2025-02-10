@@ -25,22 +25,14 @@ This is the backend API for a social media application that provides a range of 
 
 - [Node.js](https://nodejs.org)
 - [Express](https://expressjs.com)
-- [Express-favicon](https://www.npmjs.com/package/express-favicon)
 - [Nodemon](https://nodemon.io)
-- [Node Schedule](https://www.npmjs.com/package/node-schedule)
 - [joi](https://joi.dev)
 - [bcrypt.js](https://www.npmjs.com/package/bcryptjs)
 - [jwt](https://jwt.io)
-- [Nano ID](https://www.npmjs.com/package/nanoid)
-- [Nodemailer](https://nodemailer.com)
-- [otp-generator](https://www.npmjs.com/package/otp-generator)
 - [multer](https://www.npmjs.com/package/multer)
 - [mongoose](https://mongoosejs.com)
-- [moment](https://momentjs.com)
 - [dotenv](https://www.npmjs.com/package/dotenv)
-- [qrcode](https://www.npmjs.com/package/qrcode)
 - [cors](https://www.npmjs.com/package/cors)
-- [cloudinary](https://cloudinary.com)
 
 
 ## 🎉 Features
