@@ -41,8 +41,7 @@ This is the backend API for a social media application that provides a range of 
 - [qrcode](https://www.npmjs.com/package/qrcode)
 - [cors](https://www.npmjs.com/package/cors)
 - [cloudinary](https://cloudinary.com)
-- [axios](https://axios-http.com)
-- [ua-parser-js](https://www.npmjs.com/package/ua-parser-js)
+
 
 ## 🎉 Features
 
