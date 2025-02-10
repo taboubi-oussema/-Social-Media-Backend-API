@@ -1,4 +1,7 @@
-const {Notification,notificationJoiSchema} = require("../model/notification.model");
+const {
+  Notification,
+  notificationJoiSchema,
+} = require("../model/notification.model");
 const asynchandler = require("express-async-handler");
 const { User } = require("../model/user.model");
 /**
@@ -47,10 +50,10 @@ const GetNotificationById = asynchandler(async (req, res) => {
  */
 const CreateNewNotification = asynchandler(async (req, res) => {
   try {
-    const { error } =notificationJoiSchema(req.body);
-      if (error) {
-        return res.status(400).json({ message: error.details[0].message });
-      }
+    const { error } = notificationJoiSchema(req.body);
+    if (error) {
+      return res.status(400).json({ message: error.details[0].message });
+    }
 
     const user = await User.findById(req.body.user);
     if (!user) {

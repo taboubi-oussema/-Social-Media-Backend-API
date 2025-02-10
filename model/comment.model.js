@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Joi = require("joi");
 
 const commentSchema = new mongoose.Schema({
   content: { type: String, required: true },
@@ -15,5 +16,14 @@ const commentSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
-const Comment = mongoose.model("Comment", commentSchema);
-module.exports = Comment;
+const commentJoiSchema = (obj) => {
+  const schema = Joi.object({
+    content: Joi.string().required(),
+    user: Joi.string().required(),
+    post: Joi.string().required(),
+  });
+  return schema.validate(obj);
+};
+
+const Comment = mongoose.model("commentProject", commentSchema);
+module.exports = { Comment, commentJoiSchema };
