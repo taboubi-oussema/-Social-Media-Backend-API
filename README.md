@@ -52,7 +52,6 @@ This is the backend API for a social media application that provides a range of 
 <h4>4- Post Management: </h4>
 
 - Crud Posts (soft delete applied)
-- Linkedin reactions simulator 
 
 <h4>5- Comment Management: </h4>
 
