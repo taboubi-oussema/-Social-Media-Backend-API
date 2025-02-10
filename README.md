@@ -57,7 +57,7 @@ This is the backend API for a social media application that provides a range of 
 <h4>4- Post Management: </h4>
 
 - Crud Posts (soft delete applied)
-- Linkedin reactions simulator  ![image](https://static.licdn.com/sc/h/b4vbnu63fjnrjyuqemaajt06l) ![image](https://static.licdn.com/sc/h/528m9da0ski0hytdrx3o8vfau) ![image](https://static.licdn.com/sc/h/9zeq0nwqbbsfwwfuveskhr7sd) ![image](https://static.licdn.com/sc/h/e3j8tb0bp0xcj5dccu9od4ywf) ![image](https://static.licdn.com/sc/h/67zjrz4y0ylyvrzui6kbmnt8h) ![image](https://static.licdn.com/sc/h/ktcgulanbxpl0foz1uckibdl)
+- Linkedin reactions simulator 
 
 <h4>5- Comment Management: </h4>
 
