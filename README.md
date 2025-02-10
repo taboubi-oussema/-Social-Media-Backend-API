@@ -7,13 +7,13 @@
 
 ## 🏃‍♂️ Quick Start
 - [Description!](https://github.com/taboubi-oussema/-Social-Media-Backend-API#-description)
-- [Technologies!](https://github.com/Develekko/Social-Backend-Api#-technologies)
-- [Features!](https://github.com/Develekko/Social-Backend-Api#-features)
-- [Prerequisites!](https://github.com/Develekko/Social-Backend-Api#-prerequisites)
-- [Installation!](https://github.com/Develekko/Social-Backend-Api#%EF%B8%8F-installation)
-- [API Documentation!](https://github.com/Develekko/Social-Backend-Api#-api-documentation)
-- [Deployment!](https://github.com/Develekko/Social-Backend-Api#-deployment)
-- [Contribute!](https://github.com/Develekko/Social-Backend-Api#-contribute)
+- [Technologies!](https://github.com/taboubi-oussema/-Social-Media-Backend-API#-technologies)
+- [Features!](https://github.com/taboubi-oussema/-Social-Media-Backend-API#-features)
+- [Prerequisites!](https://github.com/taboubi-oussema/-Social-Media-Backend-API#-prerequisites)
+- [Installation!](https://github.com/taboubi-oussema/-Social-Media-Backend-API#%EF%B8%8F-installation)
+- [API Documentation!](https://github.com/taboubi-oussema/-Social-Media-Backend-API#-api-documentation)
+- [Deployment!](https://github.com/taboubi-oussema/-Social-Media-Backend-API#-deployment)
+- [Contribute!](https://github.com/Develekko/taboubi-oussema/-Social-Media-Backend-API#-contribute)
 
 
 ## 📝 Description
