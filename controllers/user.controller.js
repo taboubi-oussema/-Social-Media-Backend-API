@@ -31,47 +31,7 @@ const GetUserById = asynchandler(async (req, res) => {
   return res.status(200).json(user);
 });
 
-/**
- * @desc Create New User
- * @route  /api/users
- * @method POST
- * @access public
- */
-const CreateNewUser = asynchandler(async (req, res) => {
-  const { error } = validationCreatUser(req.body);
-  const exist = await User.findOne({
-    email: req.body.email,
-    username: req.body.username,
-  });
-  const existingEmail = await User.findOne({ email: req.body.email });
 
-  if (exist) {
-    return res.status(400).json({ message: "User already exists" });
-  }
-  if (existingEmail)
-    return res.status(400).json({ error: "Email is already registered" });
-  if (error) {
-    return res.status(400).json({ message: error.details[0].message });
-  }
-
-  const salt = await bcrypt.genSalt(10);
-  req.body.password = await bcrypt.hash(req.body.password, salt);
-
-  const newUser = new User({
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password,
-    profilePicture: req.body.profilePicture,
-    bio: req.body.bio,
-    followers: req.body.followers,
-    following: req.body.following,
-  });
-
-  await newUser.save();
-  return res
-    .status(201)
-    .json({ message: "User created successfully", newUser });
-});
 
 /**
  * @desc Update User
@@ -175,7 +135,6 @@ const FollowUser = asynchandler(async (req, res) => {
 module.exports = {
   GetAllUser,
   GetUserById,
-  CreateNewUser,
   UpdateUser,
   DeleteUser,
   FollowUser,

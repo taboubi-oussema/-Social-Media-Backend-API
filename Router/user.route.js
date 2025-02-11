@@ -1,15 +1,23 @@
 const express = require("express");
 const router = express.Router();
 const {
+
+  CreateNewUser,
+  Login,
+
+} = require("./Authentication");
+const {
   GetAllUser,
   GetUserById,
-  CreateNewUser,
   UpdateUser,
   DeleteUser,
   FollowUser
 } = require("../controllers/user.controller");
 
-router.route("/users").get(GetAllUser).post(CreateNewUser);
+
+router.route("/register").post(CreateNewUser);
+router.route("/login").post(Login);
+router.route("/users").get(GetAllUser);
 router.route("/users/follow").post(FollowUser)
 router
   .get("/users/:id", GetUserById)

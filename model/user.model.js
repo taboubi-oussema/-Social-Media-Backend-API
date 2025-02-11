@@ -21,4 +21,11 @@ const validationCreatUser = (obj) => {
   });
   return schema.validate(obj);
 };
-module.exports = { User, validationCreatUser };
+const validationLoginUser = (obj) => {
+  const schema = joi.object({
+    email: joi.string().required().email(),
+    password: joi.string().required(),
+  });
+  return schema.validate(obj);
+};
+module.exports = { User, validationCreatUser,validationLoginUser };
