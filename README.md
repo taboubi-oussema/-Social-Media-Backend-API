@@ -49,24 +49,17 @@ This is the backend API for a social media application that provides a range of 
 - Delete Account 
 - recover Account ( 30 day max ) throuh email sent after deleting
 
-<h4>3- Admin Management: </h4>
-
-- Users List / online
-- Block / un Block users
-
 <h4>4- Post Management: </h4>
 
 - Crud Posts (soft delete applied)
-- Linkedin reactions simulator 
 
 <h4>5- Comment Management: </h4>
 
 - Crud Comments (soft delete applied)
 
-<h4>6- Reply Management: </h4>
+<h4>5- Message Management: </h4>
 
-- Crud Reply (soft delete applied)
-
+- Crud Message (soft delete applied)
 
 
 
@@ -133,7 +126,7 @@ The API documentation is provided through [Postman JSON File](./Social-Backend-A
 
   1. Click **Download raw file**
   
-  ![image](https://i.imgur.com/s9pq1Z1.png)
+  ![image](https://github.com/taboubi-oussema/-Social-Media-Backend-API/blob/main/Capture%20d'%C3%A9cran%202025-02-10%20230256.png?raw=true)
 
   2. open **[Postman Desktop](https://www.postman.com/downloads)** or through **[Postman Browser](https://www.postman.com)**
   
@@ -141,10 +134,8 @@ The API documentation is provided through [Postman JSON File](./Social-Backend-A
   
   ![image](https://i.imgur.com/dc2pDb8.png)     ![image](https://i.imgur.com/Q6qR6vl.png)
   
-  3. You will find six main folders (`Auth`,`User`,`Admin`,`post`,`Comment`,`Reply`) , each folder contains an API requests. 
-  
-  ![image](https://i.imgur.com/Gl5LSFB.png) 
-  
+  3. You will find six main folders (`AUTH`,`USER`,`POST`,`NOTIFICATIONS`,`COMMENTS`,`MESSAGES`) , each folder contains an API requests. 
+    
   
 ## 🚀 Deployment
 
@@ -192,26 +183,6 @@ node -v
       ]
  }
 ```
-
-4. For our Deployment , we gonna use [vercel](https://vercel.com) 
-
->Note: Vercel is a cloud platform for building, deploying, and scaling web applications. It provides a seamless deployment experience for front-end frameworks like React, Angular, and Vue.js, as well as serverless functions and full-stack applications.
-
-- Follow these steps from [Ada Cheng](https://dev.to/adafycheng/deploy-nodejs-application-to-vercel-in-5-minutes-171m#create-a-vercel-project) article 
-
-- Once you reach here, **congratulations!** You deployed your project successfully.
-
-![image](https://imgur.com/oHi60rJ.png)
-  
-- Finally, you need to do the last important thing: add environment variables to your project through these steps .
-
-1- go to you project settings
-
-![image](https://imgur.com/qzQ9qbb.png)
-
-2- You can either add variables one by one,  copy and paste the whole file, or import your `.env` file [Read More](https://vercel.com/docs/concepts/projects/environment-variables).
-
-3- After submitting your environment variables, you may need to redeploy your Vercel project. 
 
 ## 👍 Contribute
 Leave a ⭐ If you think this project is cool.
