@@ -1,16 +1,20 @@
 const mongoose = require("mongoose");
 const joi = require("joi");
+const jwt = require("jsonwebtoken");
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  isAdmin: { type: String, default: false },
+  isAdmin: { type: Boolean, default: false },
   profilePicture: { type: String, default: "image.png" },
   bio: { type: String },
   followers: [{ type: mongoose.Schema.Types.ObjectId, ref: "userProject" }],
   following: [{ type: mongoose.Schema.Types.ObjectId, ref: "userProject" }],
   createdAt: { type: Date, default: Date.now },
 });
+userSchema.methods.generateToken = function() {
+  return jwt.sign({ id: this._id, isAdmin: this.isAdmin },process.env.JWT_SECRET_KEY);
+}
 const User = mongoose.model("userProject", userSchema);
 
 //validations

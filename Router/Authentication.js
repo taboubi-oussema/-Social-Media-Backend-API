@@ -5,7 +5,7 @@ const {
 } = require("../model/user.model");
 const asynchandler = require("express-async-handler");
 const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+
 /**
  * @desc Create New User
  * @route  /api/users
@@ -43,11 +43,7 @@ const CreateNewUser = asynchandler(async (req, res) => {
   });
 
   const result = await newUser.save();
-  const token = jwt.sign(
-    { email: req.body.email },
-    process.env.JWT_SECRET_KEY,
-    { expiresIn: "1d" }
-  );
+  const token = newUser.generateToken();
   const { password, ...other } = result._doc;
   return res
     .status(201)
@@ -76,9 +72,7 @@ const Login = asynchandler(async (req, res) => {
   if (!passMatch)
     return res.status(400).json({ error: "invalid Email or Password " });
   const { password, ...other } = existingUser._doc;
-  const token = jwt.sign({ id: existingUser._id }, process.env.JWT_SECRET_KEY, {
-    expiresIn: "1d",
-  });
+  const token = existingUser.generateToken();
   return res
     .status(201)
     .json({ message: "Login successfully", ...other, token });

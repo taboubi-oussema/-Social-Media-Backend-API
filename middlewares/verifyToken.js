@@ -7,10 +7,33 @@ function verifyToken(req, res, next) {
       req.user = decoded;
       next();
     } catch (err) {
-      return res.status(401).json({ message: "Invalid token" ,err});
+      return res.status(401).json({ message: "Invalid token", err });
     }
   } else {
     return res.status(401).json({ message: "Token not provided" });
   }
 }
-module.exports = { verifyToken };
+function verifyTokenAndAdmin(req, res, next) {
+  verifyToken(req, res, () => {
+    if (!req.user.isAdmin) {
+
+      return res.status(403).json({ message: "Admin privileges required" });
+    } else {
+      next()
+    }
+  });
+}
+function verifyTokenAndAuthorization(req, res, next) {
+  verifyToken(req, res, () => {
+    if (req.user.id === req.params.id || req.user.isAdmin) {
+      next();
+    } else {
+      return res.status(403).json({ message: "Not authorized" });
+    }
+  });
+}
+module.exports = {
+  verifyToken,
+  verifyTokenAndAdmin,
+  verifyTokenAndAuthorization,
+};
