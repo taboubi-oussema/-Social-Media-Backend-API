@@ -7,15 +7,19 @@ const {
   UpdateNotification,
   DeleteNotification,
 } = require("../controllers/notification.controller");
+const {
+  verifyTokenAndAdmin,
+  verifyTokenAndAuthorization,
+} = require("../middlewares/verifyToken");
 
 router
   .route("/notifications")
-  .get(GetAllNotifications)
+  .get(verifyTokenAndAdmin,GetAllNotifications)
   .post(CreateNewNotification);
 
 router
-  .get("/notifications/:id", GetNotificationById)
-  .delete("/notifications/:id", DeleteNotification)
-  .put("/notifications/:id", UpdateNotification);
+  .get("/notifications/:id",verifyTokenAndAuthorization, GetNotificationById)
+  .delete("/notifications/:id",verifyTokenAndAuthorization, DeleteNotification)
+  .put("/notifications/:id",verifyTokenAndAuthorization, UpdateNotification);
 
 module.exports = router;

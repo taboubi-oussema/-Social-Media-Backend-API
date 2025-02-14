@@ -7,12 +7,16 @@ const {
   UpdatePost,
   DeletePost,
 } = require("../controllers/post.controller");
+const {
+  verifyTokenAndAdmin,
+  verifyTokenAndAuthorization,
+} = require("../middlewares/verifyToken");
 
-router.route("/posts").get(GetAllPosts).post(CreateNewPost);
+router.route("/posts").get(verifyTokenAndAdmin,GetAllPosts).post(CreateNewPost);
 
 router
-  .get("/posts/:id", GetPostById)
-  .delete("/posts/:id", DeletePost)
-  .put("/posts/:id", UpdatePost);
+  .get("/posts/:id", verifyTokenAndAuthorization,GetPostById)
+  .delete("/posts/:id",verifyTokenAndAuthorization, DeletePost)
+  .put("/posts/:id", verifyTokenAndAuthorization,UpdatePost);
 
 module.exports = router;

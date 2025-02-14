@@ -1,4 +1,8 @@
 const express = require("express");
+const {
+  verifyTokenAndAdmin,
+  verifyTokenAndAuthorization,
+} = require("../middlewares/verifyToken");
 
 const router = express.Router();
 const {
@@ -9,11 +13,14 @@ const {
   DeleteMessage,
 } = require("../controllers/message.controller.js");
 
-router.route("/message").get(GetAllMessages).post(CreateMessage);
+router
+  .route("/message")
+  .get(verifyTokenAndAdmin, GetAllMessages)
+  .post(CreateMessage);
 router
   .route("/message/:id")
-  .get(GetMessageById)
-  .put(UpdateMessage)
-  .delete(DeleteMessage);
+  .get(verifyTokenAndAuthorization, GetMessageById)
+  .put(verifyTokenAndAuthorization, UpdateMessage)
+  .delete(verifyTokenAndAuthorization, DeleteMessage);
 
 module.exports = router;
