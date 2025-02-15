@@ -1,10 +1,10 @@
 // Import core modules
 const express = require("express");
 const app = express();
-
-//malwaires
+const path = require("path");
+//middelewarces
 app.use(express.json());
-
+app.use(express.static(path.join(__dirname, "images")));
 // Import database configuration
 const { connectDB } = require("./config/db");
 
@@ -20,6 +20,7 @@ app.use("/api", require("./Router/post.route"));
 app.use("/api", require("./Router/notification.route"));
 app.use("/api", require("./Router/comment.route"));
 app.use("/api", require("./Router/message.route"));
+app.use("/api", require("./Router/UploadImage"));
 
 // Server Initialization
 app.listen(process.env.PORT || 5000, () => {

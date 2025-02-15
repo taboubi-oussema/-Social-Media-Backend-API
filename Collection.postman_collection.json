@@ -13,7 +13,13 @@
 					"name": "Get All User",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YWUzMTgzZTg3NTY3NDQ2NjI4YTRhNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTczOTQ2OTMxNH0.ZSnrg4-ZXzuFznAnZC-ObWC1QgJeYurcEhDyLYZN2EU",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:5000/api/users",
 							"protocol": "http",
@@ -31,11 +37,29 @@
 				},
 				{
 					"name": "Get User By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YWUzMzFkNmI5NjUzZTM5YzIyNTI4ZSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE3Mzk0Njk2MDN9.SXe13jMw514FT3uhAZjOe5eFKkmtkznHIEqCDGuQmqg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:5000/api/users/67a6354fa61239176114ff10",
+							"raw": "http://localhost:5000/api/users/67ae3196e87567446628a4a9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -44,36 +68,14 @@
 							"path": [
 								"api",
 								"users",
-								"67a6354fa61239176114ff10"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create New User",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"username\":\"ousema\",\r\n  \"email\":\"ousema@gamil.com\",\r\n  \"password\":\"1234\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:5000/api/users",
-							"protocol": "http",
-							"host": [
-								"localhost"
+								"67ae3196e87567446628a4a9"
 							],
-							"port": "5000",
-							"path": [
-								"api",
-								"users"
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YWUwYjk0YmJhNWVmMGY1YjMyYzhkOSIsImlzQWRtaW4iOiJ0cnVlIiwiaWF0IjoxNzM5NDU5NTI4LCJleHAiOjE3Mzk1NDU5Mjh9.A6xawlDyDI2oZBzN4Hm64_ChVQh8wR0_TW8Rr3X4M8k",
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -83,10 +85,16 @@
 					"name": "Update User",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YWNiNDY4N2Y0ZTMzZDliY2U5MTk4NCIsImlhdCI6MTczOTM3MTYzMSwiZXhwIjoxNzM5NDU4MDMxfQ.voYhVxKvSNBCmB-V189QeUYAeu2Qev8_u-Kb0lfiqOU",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"username\":\"fjkd\",\r\n   \"email\":\"bb@gmail.com\",\r\n   \"password\":\"jfjf\"\r\n}",
+							"raw": "{\r\n   \"username\":\"fjkd\",\r\n   \"email\":\"bbnk@gmail.com\",\r\n   \"password\":\"jfjf\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -94,7 +102,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/users/67a63556a61239176114ff13",
+							"raw": "http://localhost:5000/api/users/67acb0fdf48f35e349bdc996",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -103,7 +111,7 @@
 							"path": [
 								"api",
 								"users",
-								"67a63556a61239176114ff13"
+								"67acb0fdf48f35e349bdc996"
 							]
 						}
 					},
@@ -113,9 +121,15 @@
 					"name": "Delete User",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YWUzMTgzZTg3NTY3NDQ2NjI4YTRhNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTczOTQ2OTMxNH0.ZSnrg4-ZXzuFznAnZC-ObWC1QgJeYurcEhDyLYZN2EU",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:5000/api/users/5",
+							"raw": "http://localhost:5000/api/users/67ae331d6b9653e39c22528e",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -124,7 +138,14 @@
 							"path": [
 								"api",
 								"users",
-								"5"
+								"67ae331d6b9653e39c22528e"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YWUzMzFkNmI5NjUzZTM5YzIyNTI4ZSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE3Mzk0Njk2MDN9.SXe13jMw514FT3uhAZjOe5eFKkmtkznHIEqCDGuQmqg",
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -132,6 +153,36 @@
 				},
 				{
 					"name": "following",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"67a66e6e1d0a601e293f634d\",\r\n    \"following\": [\r\n        \"67a66fafaa310f445f65f0db\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users/follow",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"follow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload image",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -650,6 +701,127 @@
 								"api",
 								"message",
 								"67a66e6e1d0a601e293f634d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"username\":\"nermine\",\r\n \"email\":\"nerne@gmail.com\",\r\n \"password\":\"1111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"oussema@gmail.com\",\r\n    \"password\":\"1111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login user 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"amal@gmail.com\",\r\n    \"password\":\"1111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login user 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"nerne@gmail.com\",\r\n    \"password\":\"1111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"login"
 							]
 						}
 					},
