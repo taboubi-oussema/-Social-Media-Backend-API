@@ -12,11 +12,14 @@ const {
   DeleteUser,
   FollowUser,
 } = require("../controllers/user.controller");
+const { upload, uploadImage } = require("../controllers/upload.controller");
 
 router.route("/register").post(CreateNewUser);
 router.route("/login").post(Login);
-router.route("/users").get(verifyTokenAndAdmin,GetAllUser);
+router.route("/users").get(verifyTokenAndAdmin, GetAllUser);
 router.route("/users/follow").post(FollowUser);
+
+router.route("/users/upload").post(uploadImage, upload);
 router
   .route("/users/:id")
   .get(verifyTokenAndAuthorization, GetUserById)

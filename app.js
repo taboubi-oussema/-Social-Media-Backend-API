@@ -4,7 +4,7 @@ const app = express();
 const path = require("path");
 //middelewarces
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "images")));
+app.use("/images", express.static(path.join(__dirname, "images")));
 // Import database configuration
 const { connectDB } = require("./config/db");
 
@@ -14,13 +14,12 @@ require("dotenv").config();
 // Database Connection
 
 connectDB();
-
+  
 app.use("/api", require("./Router/user.route"));
 app.use("/api", require("./Router/post.route"));
 app.use("/api", require("./Router/notification.route"));
 app.use("/api", require("./Router/comment.route"));
 app.use("/api", require("./Router/message.route"));
-app.use("/api", require("./Router/UploadImage"));
 
 // Server Initialization
 app.listen(process.env.PORT || 5000, () => {

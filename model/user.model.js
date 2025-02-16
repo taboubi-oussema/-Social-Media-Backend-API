@@ -23,7 +23,7 @@ const validationCreatUser = (obj) => {
     username: joi.string().required().trim(),
     email: joi.string().required().email(),
     password: joi.string().required(),
-  });
+  });  
   return schema.validate(obj);
 };
 const validationLoginUser = (obj) => {
