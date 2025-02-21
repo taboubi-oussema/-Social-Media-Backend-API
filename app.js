@@ -14,7 +14,7 @@ require("dotenv").config();
 // Database Connection
 
 connectDB();
-  
+
 app.use("/api", require("./Router/user.route"));
 app.use("/api", require("./Router/post.route"));
 app.use("/api", require("./Router/notification.route"));
